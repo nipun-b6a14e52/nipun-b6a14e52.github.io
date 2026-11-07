@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>91大赛官网-赛事直播与作品解读_91大赛热门推荐与参赛指南</title>
+  <meta name="description" content="91大赛官网内容专题页，聚合赛事资讯、热门作品、参赛指南与社区讨论。提供91大赛最新动态、分类推荐、深度解析和常见问题解答，帮助用户快速了解91大赛看点与参与方式。">
+  <meta name="keywords" content="91大赛官网,91大赛热门推荐,91大赛赛事资讯,91大赛参赛指南,91大赛作品解析">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231e2b42'/%3E%3Ctext x='50' y='68' font-size='50' font-weight='bold' text-anchor='middle' fill='%23f0c45a'%3E91%3C/text%3E%3C/svg%3E">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --bg: #f4f7fc;
+      --surface: #ffffff;
+      --surface-soft: #f9fbfe;
+      --ink: #1e2b42;
+      --ink-soft: #4a5a72;
+      --muted: #7e8b9f;
+      --line: #e2e8f0;
+      --accent: #1e2b42;
+      --accent-warm: #d9a441;
+      --accent-soft: #fef3e0;
+      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 3px rgba(0, 0, 0, 0.02);
+      --shadow-md: 0 12px 28px rgba(0, 0, 0, 0.05);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --font-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      font-family: var(--font-base);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* 导航 */
+    .navbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.86);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 24px;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.6rem;
+      letter-spacing: -0.5px;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .logo span {
+      background: var(--accent);
+      color: #fff;
+      font-size: 1rem;
+      padding: 4px 10px;
+      border-radius: 30px;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: var(--ink-soft);
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: inherit;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-warm);
+    }
+
+    .search-sm {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border-radius: 40px;
+      padding: 6px 18px;
+      gap: 8px;
+      border: 1px solid var(--line);
+    }
+
+    .search-sm input {
+      border: none;
+      background: transparent;
+      padding: 6px 0;
+      font-size: 0.9rem;
+      outline: none;
+      width: 140px;
+    }
+
+    .search-sm button {
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      color: var(--muted);
+      cursor: default;
+    }
+
+    /* Banner */
+    .hero {
+      margin: 32px 0 24px;
+      background: linear-gradient(135deg, #1e2b42 0%, #2f405e 100%);
+      border-radius: var(--radius-lg);
+      padding: 48px 40px;
+      color: #fff;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "91";
+      position: absolute;
+      right: -10px;
+      bottom: -40px;
+      font-size: 18rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.03);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 16px;
+      max-width: 75%;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.88;
+      max-width: 60%;
+      margin-bottom: 32px;
+    }
+
+    .hero-search {
+      display: flex;
+      background: #fff;
+      border-radius: 60px;
+      padding: 6px 6px 6px 24px;
+      max-width: 520px;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .hero-search input {
+      flex: 1;
+      border: none;
+      padding: 12px 0;
+      font-size: 1rem;
+      outline: none;
+      color: var(--ink);
+    }
+
+    .hero-search button {
+      background: var(--accent-warm);
+      border: none;
+      padding: 12px 28px;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #1e2b42;
+      font-size: 0.95rem;
+      cursor: default;
+      white-space: nowrap;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .hero-tags a {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 8px 18px;
+      border-radius: 40px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: 0.2s;
+    }
+
+    .hero-tags a:hover {
+      background: var(--accent-warm);
+      border-color: var(--accent-warm);
+      color: #1e2b42;
+    }
+
+    /* 通用 section */
+    .section {
+      margin: 48px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .section-header h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .section-header .more {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px dashed var(--line);
+    }
+
+    /* 卡片网格 */
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid rgba(0, 0, 0, 0.02);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      padding: 4px 10px;
+      border-radius: 40px;
+      background: var(--accent-soft);
+      color: #8f6b1c;
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--ink);
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+    }
+
+    /* 列表样式 */
+    .update-list {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: 8px 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .update-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+      gap: 20px;
+    }
+
+    .update-item:last-child {
+      border-bottom: none;
+    }
+
+    .update-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--ink);
+      flex: 2;
+    }
+
+    .update-desc {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      flex: 3;
+    }
+
+    .update-time {
+      font-size: 0.8rem;
+      color: var(--muted);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 12px;
+    }
+
+    .cat-item {
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      padding: 16px 8px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: 0.2s;
+    }
+
+    .cat-item:hover {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    /* 深度解析 */
+    .deep-dive {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .deep-dive h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    .deep-dive p {
+      margin-bottom: 18px;
+      color: var(--ink-soft);
+      font-size: 1rem;
+    }
+
+    /* FAQ 手风琴 */
+    .faq-list {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+      padding: 18px 24px;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-q {
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--ink);
+    }
+
+    .faq-q span {
+      color: var(--muted);
+      font-size: 1.2rem;
+    }
+
+    .faq-a {
+      margin-top: 12px;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      padding-right: 20px;
+    }
+
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .comment-card {
+      background: var(--surface);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+      border-left: 4px solid var(--accent-warm);
+    }
+
+    .comment-user {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      margin-bottom: 8px;
+    }
+
+    .comment-name {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .comment-date {
+      color: var(--muted);
+    }
+
+    .comment-text {
+      font-size: 0.92rem;
+      color: var(--ink-soft);
+    }
+
+    /* 资讯卡片 */
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .news-card {
+      background: var(--surface);
+      border-radius: var(--radius-md);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .news-card h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .news-card .date {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .news-card p {
+      font-size: 0.9rem;
+      color: var(--ink-soft);
+    }
+
+    /* 页脚 */
+    .footer {
+      margin-top: 64px;
+      padding: 40px 0;
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      margin-right: 20px;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent-warm);
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cat-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+      .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .grid-4, .news-grid, .comment-grid {
+        grid-template-columns: 1fr;
+      }
+      .nav-links {
+        display: none;
+      }
+      .hero {
+        padding: 32px 24px;
+      }
+      .hero h1 {
+        font-size: 1.8rem;
+        max-width: 100%;
+      }
+      .hero p {
+        max-width: 100%;
+      }
+      .hero-search {
+        flex-direction: column;
+        background: transparent;
+        box-shadow: none;
+        padding: 0;
+      }
+      .hero-search input {
+        width: 100%;
+        background: #fff;
+        border-radius: 60px;
+        padding: 14px 20px;
+      }
+      .hero-search button {
+        width: 100%;
+        padding: 14px;
+      }
+      .cat-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .update-item {
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .update-desc {
+        flex: 1 0 100%;
+        order: 3;
+      }
+      .deep-dive {
+        padding: 24px;
+      }
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+  <!-- 导航 -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="/#hero" class="logo">91大赛<span>官网</span></a>
+      <nav class="nav-links">
+        <a href="/#hot">热门推荐</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">用户评论</a>
+      </nav>
+      <div class="search-sm">
+        <input type="text" placeholder="搜索赛事/作品...">
+        <button>🔍</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Banner -->
+    <section class="hero" id="hero">
+      <h1>91大赛官网 · 赛事资讯与作品聚合站</h1>
+      <p>追踪91大赛最新动态，发现热门参赛作品，获取参赛指南与社区讨论。这里汇集赛事解读、分类推荐与深度分析，为关注91大赛的用户提供清晰的内容入口。</p>
+      <div class="hero-search">
+        <input type="text" placeholder="搜索作品名称、选手或关键词">
+        <button>搜索</button>
+      </div>
+      <div class="hero-tags">
+        <a href="/#hot">热门作品</a>
+        <a href="/#updates">最新赛程</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#faq">参赛问答</a>
+        <a href="/#categories">分类索引</a>
+        <a href="/#comments">社区评论</a>
+        <a href="/#news">赛事资讯</a>
+      </div>
+    </section>
+
+    <!-- 内容简介 -->
+    <section class="section" id="intro">
+      <div class="section-header">
+        <h2>关于91大赛官网专题</h2>
+      </div>
+      <div style="background: var(--surface); border-radius: var(--radius-lg); padding: 32px 40px; box-shadow: var(--shadow-sm);">
+        <p style="font-size: 1rem; color: var(--ink-soft); margin-bottom: 16px;">91大赛官网内容专题页是围绕91大赛建立的信息聚合与解读平台，面向参赛者、观众和内容爱好者。页面汇集赛事动态、热门作品推荐、分类索引、深度解析和用户讨论，帮助访问者快速理解91大赛的赛事结构、作品风格和参与方式。</p>
+        <p style="font-size: 1rem; color: var(--ink-soft); margin-bottom: 16px;">无论你是想了解91大赛的往期优秀作品，还是关注最新赛程与选手表现，都可以在这里找到对应的栏目入口。我们整理了推荐卡片、更新列表、FAQ和社区评论，让信息浏览更直观，也方便收藏和反复查阅。</p>
+        <p style="font-size: 1rem; color: var(--ink-soft);">页面内容覆盖赛事资讯、作品分类、参赛指南和社区反馈等多个维度，适合希望系统了解91大赛的用户作为参考入口。所有内容均为编辑整理与模拟展示，便于快速浏览与内容消费。</p>
+      </div>
+    </section>
+
+    <!-- 热门推荐 -->
+    <section class="section" id="hot">
+      <div class="section-header">
+        <h2>热门作品推荐</h2>
+        <a href="/#updates" class="more">更多更新</a>
+      </div>
+      <div class="grid-4">
+        <div class="card">
+          <span class="card-tag">视觉设计</span>
+          <h3>霓虹城市漫游</h3>
+          <p>以赛博朋克风格构建未来城市，色彩与光影节奏感强，适合关注视觉表现的观众。</p>
+          <div class="card-meta"><span>🔥 热度 9.2</span><span>更新至 06 集</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">短片叙事</span>
+          <h3>第七个夏天</h3>
+          <p>青春题材短片，讲述毕业前最后一周的故事，情感细腻，镜头语言干净。</p>
+          <div class="card-meta"><span>🔥 热度 8.9</span><span>已完结</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">实验影像</span>
+          <h3>折叠时间</h3>
+          <p>实验性剪辑手法，将日常片段重新组合，带来非线性的观看体验。</p>
+          <div class="card-meta"><span>🔥 热度 8.5</span><span>更新至 03 集</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">动画短片</span>
+          <h3>星尘收集者</h3>
+          <p>手绘风格动画，讲述小女孩与星星的治愈故事，配乐温暖。</p>
+          <div class="card-meta"><span>🔥 热度 9.0</span><span>已完结</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">纪录片</span>
+          <h3>手艺人·守艺</h3>
+          <p>记录传统手工艺人的日常，真实质朴，展现匠人精神与生活质感。</p>
+          <div class="card-meta"><span>🔥 热度 8.7</span><span>更新至 04 集</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">剧情短片</span>
+          <h3>无声电话</h3>
+          <p>通过一通打不通的电话串联起家庭关系，剧本扎实，表演自然。</p>
+          <div class="card-meta"><span>🔥 热度 8.8</span><span>已完结</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">音乐现场</span>
+          <h3>声波实验场</h3>
+          <p>现场音乐与视觉投影结合，呈现沉浸式演出片段，节奏感强烈。</p>
+          <div class="card-meta"><span>🔥 热度 8.4</span><span>更新至 02 集</span></div>
+        </div>
+        <div class="card">
+          <span class="card-tag">创意广告</span>
+          <h3>一杯咖啡的时间</h3>
+          <p>创意广告单元，用一杯咖啡的时间讲述城市中的微小温暖。</p>
+          <div class="card-meta"><span>🔥 热度 8.6</span><span>已完结</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 最新更新 -->
+    <section class="section" id="updates">
+      <div class="section-header">
+        <h2>最新赛程与动态</h2>
+        <span style="font-size:0.9rem; color:var(--muted);">更新于2026年11月7日</span>
+      </div>
+      <div class="update-list">
+        <div class="update-item">
+          <span class="update-title">霓虹城市漫游</span>
+          <span class="update-desc">第6集上线，城市夜景片段更新，新增幕后制作花絮。</span>
+          <span class="update-time">今日 10:24</span>
+        </div>
+        <div class="update-item">
+          <span class="update-title">第七个夏天</span>
+          <span class="update-desc">完整版已上线，导演解说音轨同步放出。</span>
+          <span class="update-time">今日 09:12</span>
+        </div>
+        <div class="update-item">
+          <span class="update-title">折叠时间</span>
+          <span class="update-desc">第3集更新，新增两条观众可选剪辑线。</span>
+          <span class="update-time">昨日 18:40</span>
+        </div>
+        <div class="update-item">
+          <span class="update-title">星尘收集者</span>
+          <span class="update-desc">完结纪念直播将于11月9日晚8点开启。</span>
+          <span class="update-time">昨日 14:20</span>
+        </div>
+        <div class="update-item">
+          <span class="update-title">手艺人·守艺</span>
+          <span class="update-desc">第4集“竹编”上线，记录老师傅的编织日常。</span>
+          <span class="update-time">11月5日</span>
+        </div>
+        <div class="update-item">
+          <span class="update-title">声波实验场</span>
+          <span class="update-desc">第二场现场片段更新，音频修复版同步上线。</span>
+          <span class="update-time">11月4日</span>
+        </div>
+        <div class="update-item">
+          <span class="update-title">91大赛官网专题</span>
+          <span class="update-desc">新增“参赛指南”与“分类索引”栏目，方便快速查找。</span>
+          <span class="update-time">11月3日</span>
+        </div>
+        <div class="update-item">
+          <span class="update-title">无声电话</span>
+          <span class="update-desc">主创访谈上线，讲述剧本创作与拍摄过程。</span>
+          <span class="update-time">11月2日</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分类入口 -->
+    <section class="section" id="categories">
+      <div class="section-header">
+        <h2>分类入口</h2>
+        <a href="/#hot" class="more">查看全部</a>
+      </div>
+      <div class="cat-grid">
+        <a href="/#hot" class="cat-item">剧情短片</a>
+        <a href="/#hot" class="cat-item">视觉实验</a>
+        <a href="/#hot" class="cat-item">动画单元</a>
+        <a href="/#hot" class="cat-item">纪录片</a>
+        <a href="/#hot" class="cat-item">音乐现场</a>
+        <a href="/#hot" class="cat-item">创意广告</a>
+        <a href="/#hot" class="cat-item">学生作品</a>
+        <a href="/#hot" class="cat-item">往期精选</a>
+      </div>
+    </section>
+
+    <!-- 深度解析 -->
+    <section class="section" id="deep">
+      <div class="section-header">
+        <h2>91大赛深度解析</h2>
+      </div>
+      <div class="deep-dive">
+        <h2>赛事内容与作品风格观察</h2>
+        <p>91大赛官网所呈现的赛事内容以短片、视觉实验、动画和纪录片为主，强调创作者的个人表达与影像完成度。从近期的热门作品来看，视觉风格和叙事节奏是观众讨论的焦点，许多作品在色彩运用和镜头语言上具有明显辨识度。</p>
+        <p>参赛作品的题材跨度较大，既有青春成长、家庭关系等现实题材，也有科幻、实验影像等偏风格化的尝试。这种多样性让91大赛的内容生态更加丰富，也使得分类浏览和推荐入口显得尤为重要。观众可以通过分类标签快速定位感兴趣的作品类型，也可以借助深度解析了解作品的创作背景。</p>
+        <p>在内容消费体验上，91大赛官网专题页将热门推荐、更新列表和社区评论整合在一起，减少了信息查找的步骤。对于希望持续追踪赛事动态的用户，更新列表和FAQ模块提供了实用的参考信息。此外，评论区的讨论氛围也反映了观众对作品表现、叙事方式和制作细节的真实反馈。</p>
+        <p>从搜索意图来看，关注91大赛的用户通常希望了解赛事的最新进展、作品推荐、参赛方式以及社区评价。本页面通过结构化的栏目和自然的文本描述，尽可能覆盖这些需求，同时保持内容的可读性和浏览效率。</p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-header">
+        <h2>常见问题</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">91大赛官网主要提供哪些内容？<span>＋</span></div>
+          <div class="faq-a">页面整理91大赛相关的赛事资讯、热门作品推荐、分类索引、深度解析和用户评论。适合希望快速了解赛事动态、查看作品风格或参与讨论的用户浏览。所有内容以信息聚合和参考为目的，方便一站式获取赛事相关信息。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">如何查找特定类型的参赛作品？<span>＋</span></div>
+          <div class="faq-a">可以通过分类入口快速筛选剧情短片、视觉实验、动画单元等类型。每个推荐卡片也标注了作品类型标签，方便按兴趣浏览。如果希望系统查看，建议从分类入口进入，再结合热门推荐和更新列表进行对比。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">91大赛的更新频率是怎样的？<span>＋</span></div>
+          <div class="faq-a">页面中的“最新赛程与动态”模块会展示近期更新，包括作品上线、花絮发布和直播预告等。更新频率根据赛事阶段有所不同，建议关注该列表或收藏页面以便及时查看。具体时间以页面显示为准。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">参赛作品适合哪些人观看？<span>＋</span></div>
+          <div class="faq-a">91大赛的作品覆盖面较广，包括剧情短片、实验影像、动画和纪录片等。喜欢短片叙事、视觉设计或纪实内容的观众都能找到感兴趣的方向。部分实验性较强的作品可能更适合对影像语言有好奇心的观众。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">页面中的评论是否代表官方观点？<span>＋</span></div>
+          <div class="faq-a">用户评论模块展示的是模拟的社区讨论内容，不代表官方立场。评论旨在呈现观众对作品的不同看法，包括推荐、讨论和中性评价，帮助读者了解社区氛围。浏览时请以页面正文和FAQ为主要参考。</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">如何关注91大赛的后续资讯？<span>＋</span></div>
+          <div class="faq-a">可以定期访问本专题页，查看“最新赛程与动态”和“相关资讯”模块。页面会持续整理赛事相关的内容更新，包括作品推荐、主创访谈和活动预告。建议将页面加入收藏夹，方便后续快速打开。</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 用户评论 -->
+    <section class="section" id="comments">
+      <div class="section-header">
+        <h2>用户评论</h2>
+        <span style="font-size:0.9rem; color:var(--muted);">近30天讨论</span>
+      </div>
+      <div class="comment-grid">
+        <div class="comment-card"><div class="comment-user"><span class="comment-name">光影旅人</span><span class="comment-date">11月6日</span></div><div class="comment-text">霓虹城市漫游的视觉真的惊艳，色彩搭配很有想法，期待后续更新。</div></div>
+        <div class="comment-card"><div class="comment-user"><span class="comment-name">夏夜微风</span><span class="comment-date">11月5日</span></div><div class="comment-text">第七个夏天看哭了，结尾处理得很克制，演员表现自然。</div></div>
+        <div class="comment-card"><div class="comment-user"><span class="comment-name">剪辑手记</span><span class="comment-date">11月5日</span></div><div class="comment-text">折叠时间的剪辑思路很有意思，不过有些段落节奏偏慢，看个人口味。</div></div>
+        <div class="comment-card"><div class="comment-user"><span class="comment-name">星尘收藏家</span><span class="comment-date">11月4日</span></div><div class="comment-text">星尘收集者的配乐太治愈了，手绘风格也很舒服，已二刷。</div></div>
+        <div class="comment-card"><div class="comment-user"><span class="comment-name">纪录片爱好者</span><span class="comment-date">11月3日</span></div><div class="comment-text">手艺人系列很真实，没有过度渲染，能看出拍摄者的耐心。</div></div>
+        <div class="comment-card"><div class="comment-user"><span class="comment-name">路人甲</span><span class="comment-date">11月3日</span></div><div class="comment-text">分类入口挺方便的，找短片不用一个个翻，希望再多点作品。</div></div>
+        <div class="comment-card"><div class="comment-user"><span class="comment-name">声波漫游</span><span class="comment-date">11月2日</span></div><div class="comment-text">声波实验场的现场感很强，不过音频版本和现场还是有点差别。</div></div>
+        <div class="comment-card"><div class="comment-user"><span class="comment-name">咖啡不加糖</span><span class="comment-date">11月1日</span></div><div class="comment-text">一杯咖啡的时间创意不错，镜头很干净，适合放松时看。</div></div>
+        <div class="comment-card"><div class="comment-user"><span class="comment-name">追更小队长</span><span class="comment-date">10月31日</span></div><div class="comment-text">更新列表很实用，每天来看看有没有新内容，已经成习惯了。</div></div>
+        <div class="comment-card"><div class="comment-user"><span class="comment-name">无名观众</span><span class="comment-date">10月30日</span></div><div class="comment-text">有的作品画幅比例不太统一，观看时稍微有点跳，但内容还是好的。</div></div>
+        <div class="comment-card"><div class="comment-user"><span class="comment-name">胶片质感</span><span class="comment-date">10月29日</span></div><div class="comment-text">91大赛的作品整体质量不错，能看到很多新鲜的表达方式。</div></div>
+        <div class="comment-card"><div class="comment-user"><span class="comment-name">夜航星</span><span class="comment-date">10月28日</span></div><div class="comment-text">希望FAQ里能多写点关于参赛流程的内容，虽然现在只是观众。</div></div>
+      </div>
+    </section>
+
+    <!-- 相关资讯 -->
+    <section class="section" id="news">
+      <div class="section-header">
+        <h2>相关资讯</h2>
+      </div>
+      <div class="news-grid">
+        <div class="news-card">
+          <h4>91大赛官网专题页新增分类索引</h4>
+          <div class="date">2026年11月6日</div>
+          <p>新增的八个分类入口覆盖剧情、动画、实验影像等方向，方便快速定位感兴趣的内容。</p>
+        </div>
+        <div class="news-card">
+          <h4>“霓虹城市漫游”导演分享视觉设计思路</h4>
+          <div class="date">2026年11月5日</div>
+          <p>主创在访谈中谈到色彩选择与城市空间的关联，以及后期合成中的尝试。</p>
+        </div>
+        <div class="news-card">
+          <h4>星尘收集者完结直播将于11月9日举行</h4>
+          <div class="date">2026年11月4日</div>
+          <p>届时主创团队将回顾制作过程并回答观众提问，具体入口请关注页面更新。</p>
+        </div>
+        <div class="news-card">
+          <h4>91大赛热门作品讨论热度持续上升</h4>
+          <div class="date">2026年11月3日</div>
+          <p>社区中关于叙事节奏和视觉风格的讨论增多，观众反馈呈现多样化趋势。</p>
+        </div>
+        <div class="news-card">
+          <h4>手艺人·守艺更新至第四集</h4>
+          <div class="date">2026年11月2日</div>
+          <p>本集聚焦竹编工艺，记录老师傅的日常编织过程与生活状态。</p>
+        </div>
+        <div class="news-card">
+          <h4>91大赛官网FAQ模块补充常见问题</h4>
+          <div class="date">2026年11月1日</div>
+          <p>新增关于分类查找和更新频率的问答，帮助用户更高效地浏览内容。</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p style="font-weight:600; color:var(--ink); font-size:1rem; margin-bottom:8px;">91大赛官网专题页</p>
+        <p style="max-width:400px;">本站为内容聚合与信息参考页面，所有作品信息、评论及资讯均为模拟展示，不构成官方发布。页面内容旨在帮助用户了解91大赛相关内容。</p>
+      </div>
+      <div class="footer-links">
+        <a href="/#hero">首页</a>
+        <a href="/#hot">热门推荐</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#news">资讯</a>
+        <a href="/#comments">评论</a>
+      </div>
+      <div style="font-size:0.8rem; color:var(--muted);">
+        <p>© 2026 91大赛官网内容专题</p>
+        <p>友情链接：<a href="#" style="color:var(--muted);">内容社区</a> · <a href="#" style="color:var(--muted);">视觉作品库</a> · <a href="#" style="color:var(--muted);">影像观察</a></p>
+      </div>
+    </div>
+  </footer>
+</body>
+  </html>
